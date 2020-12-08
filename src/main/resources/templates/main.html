@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Transcription</title>
+</head>
+<body>
+
+<form enctype="multipart/form-data" th:action="@{/}" th:method="POST" th:object="${correctedDocx}">
+    <input multiple th:field="*{sourceFile}" type="file">
+    <br>
+    <p><label for="interviewerDesignation">Обозначение интервьюера</label><br>
+        <input id="interviewerDesignation" th:field="*{interviewerDesignation}" type="text">
+    </p>
+    <p><label for="respondentDesignation">Обозначение респондента</label><br>
+        <input id="respondentDesignation" th:field="*{respondentDesignation}" type="text">
+    </p>
+    <p><label for="firstSpeaker">Первым говорит: </label><Br>
+        <input id="firstSpeaker" name="firstSpeaker" th:field="*{firstSpeaker}" type="radio" value="interviewer">
+        Интервьюер<Br>
+        <input name="firstSpeaker" th:field="*{firstSpeaker}" type="radio" value="respondent">
+        Респондент<Br>
+    </p>
+
+    <p><label for="bold">Говорящие жирным шрифтом </label><Br>
+        <input id="bold" name="speakersDesignationsIsBold" th:field="*{speakersDesignationsIsBold}" type="radio"
+               value="true"> Да<Br>
+        <input name="speakersDesignationsIsBold" th:field="*{speakersDesignationsIsBold}" type="radio" value="false">
+        Нет<Br>
+    </p>
+
+    <p><input type="submit" value="Отправить">
+        <input type="reset" value="Очистить"></p>
+</form>
+
+</body>
+</html>
