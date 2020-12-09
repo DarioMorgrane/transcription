@@ -31,8 +31,8 @@ public class CorrectedDocxTest {
 
     @Test
     void correctedDocxTextShouldMatchExample() throws IOException {
-        sourceDocx = new XWPFDocument(new FileInputStream(new File("src/test/resources/firstSource.docx")));
-        expectedDocx = new XWPFDocument(new FileInputStream(new File("src/test/resources/firstExpectedResult.docx")));
+        sourceDocx = new XWPFDocument(new FileInputStream(new File("src/test/resources/source.docx")));
+        expectedDocx = new XWPFDocument(new FileInputStream(new File("src/test/resources/expectedResult.docx")));
 
         String originalFileName = "firstSource.docx";
         ByteArrayOutputStream sourceDocxOutputStream = new ByteArrayOutputStream();
